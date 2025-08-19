@@ -8244,13 +8244,38 @@
       fetchpriority="low"
       href="https://framerusercontent.com/sites/6sfvUjQXf0Rj3FDJ8ktYXt/script_main.7HDHZ7ZW.mjs"
     />
-    <script
-      type="module"
-      async
-      data-framer-bundle="main"
-      fetchpriority="low"
-      src="script.js"
-    ></script>
+    <script>
+(function() {
+    // --- Framer Boot (cleaned) ---
+    var config = {
+        // Put Framer-specific config here if needed (fonts, animations, etc.)
+    };
+
+    function loadCSS(href) {
+        var link = document.createElement("link");
+        link.rel = "stylesheet";
+        link.href = href;
+        document.head.appendChild(link);
+    }
+
+    function loadJS(src, callback) {
+        var script = document.createElement("script");
+        script.src = src;
+        script.async = true;
+        script.onload = callback || function(){};
+        document.body.appendChild(script);
+    }
+
+    // Example: load main CSS
+    loadCSS("styles.css");
+
+    // Example: load site scripts
+    loadJS("main.js");
+
+    // NOTE: Editor/Badge injection code REMOVED
+})();
+</script>
+
     <div
       id="svg-templates"
       style="
